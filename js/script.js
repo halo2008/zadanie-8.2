@@ -1,3 +1,5 @@
+'use strict';
+
 
 var output = document.getElementById('output-temp');
 
@@ -7,11 +9,13 @@ var button = document.getElementById('btn-cel');
 
 var button_2 = document.getElementById('btn-cel-2');
 
-var temp;
+
 
 button.addEventListener('click', function(){  
     
   temp = window.prompt('wpisz temperature w stopniach celciusza');
+  
+  var temp = parseFloat(temp);
   
   var tempx;
   
@@ -19,19 +23,24 @@ button.addEventListener('click', function(){
   
   output.innerHTML = 'temperatura w stopniach celsjusza ' +temp+ ' temperatura w stopniach farenchaita '+ tempx;
   
-  if (temp < 0) {
+   if (isNaN(temp)) {
+    window.prompt('nie podałeś liczby');
+    return 0;
+  }
+  
+  else if (temp < 0) {
     output_2.innerHTML = 'brrr zimno';
   }
   
-  else if (temp == 0){
+  else if (temp === 0){
    output_2.innerHTML = 'chyba woda zamarzła';
   }
   
-  else if (18 > temp > 0 ) {
+  else if (18 > temp && temp > 0 ) {
     output_2.innerHTML ='nie za ciepło';
   }
   
-  else if ( 30 > temp > 18) {
+  else if ( 30 > temp && temp > 18) {
     output_2.innerHTML ='mmm przyjemnie ciepło';
   }
   
@@ -76,5 +85,3 @@ button_2.addEventListener('click', function(){
   }
  
 }); 
-  
-
