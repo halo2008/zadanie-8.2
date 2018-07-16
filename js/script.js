@@ -37,8 +37,16 @@ buttonFahrenheit.addEventListener('click', function(){
 });
 
 function temperature (temp) {
-  if (isNaN(temp)) {
+  if (isNaN(temp) || !temp) {
     window.prompt('nie podałeś liczby');
+  }
+  
+  else if (temp === null){
+    outputText.innerHTML = 'wychodzisz?';
+  }
+  
+  else if (temp === ''){
+    outputText.innerHTML ='nic nie wpisałes';
   }
   
   else if (temp < 0) {
