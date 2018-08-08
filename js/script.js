@@ -28,6 +28,8 @@ button.addEventListener('click', function(){
 buttonFahrenheit.addEventListener('click', function(){  
     
   var temp = window.prompt('wpisz temperature w stopniach celciusza');
+
+  temp = parseFloat(temp);
   
   var tempCelsius = (temp - 32) / 1.8;
   
@@ -40,8 +42,11 @@ buttonFahrenheit.addEventListener('click', function(){
 
 function checkTemperature (temp) {
 
-  if (isNaN(temp) || !temp) {
+  if (isNaN(temp)) {
     window.prompt('nie podałeś liczby');
+  }
+  else if (temp === null) {
+     outputText.innerHTML ='nie podałes liczy';
   }
   
   else if (18 >= temp && temp > 0 ) {
