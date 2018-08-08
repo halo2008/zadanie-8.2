@@ -53,10 +53,6 @@ function checkTemperature (temp) {
     outputText.innerHTML ='nie za ciepło';
   }  
   
-  else if (temp === ''){
-    outputText.innerHTML ='nic nie wpisałes';
-  }
-  
   else if (temp < 0) {
     outputText.innerHTML = 'brrr zimno';
   }
