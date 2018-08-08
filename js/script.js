@@ -18,9 +18,10 @@ button.addEventListener('click', function(){
   
   var tempFahrenheit = temp * 1.8 + 32;
   
-  output.innerHTML = 'temperatura w stopniach celsjusza ' +temp+ ' temperatura w stopniach farenchaita '+ tempFahrenheit;
-  
+  output.innerHTML = 'temperatura w stopniach celsjusza ' +temp+ ' temperatura w stopniach farenchaita '+ tempFahrenheit;  
+
   checkTemperature(temp);
+
  
 });
 
@@ -36,12 +37,26 @@ buttonFahrenheit.addEventListener('click', function(){
  
 });
 
+
 function checkTemperature (temp) {
+
   if (isNaN(temp) || !temp) {
     window.prompt('nie podałeś liczby');
   }
   
-    else if (temp < 0) {
+  else if (18 >= temp && temp > 0 ) {
+    outputText.innerHTML ='nie za ciepło';
+  }
+
+  else if (temp === null){
+    outputText.innerHTML = 'wychodzisz?';
+  }
+  
+  else if (temp === ''){
+    outputText.innerHTML ='nic nie wpisałes';
+  }
+  
+  else if (temp < 0) {
     outputText.innerHTML = 'brrr zimno';
   }
   
@@ -53,6 +68,7 @@ function checkTemperature (temp) {
     outputText.innerHTML ='nie za ciepło';
   }
   
+
   else if ( 30 >= temp && temp > 18) {
     outputText.innerHTML ='mmm przyjemnie ciepło';
   }
