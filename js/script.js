@@ -51,11 +51,7 @@ function checkTemperature (temp) {
   
   else if (18 >= temp && temp > 0 ) {
     outputText.innerHTML ='nie za ciepło';
-  }
-
-  else if (temp === null){
-    outputText.innerHTML = 'wychodzisz?';
-  }
+  }  
   
   else if (temp === ''){
     outputText.innerHTML ='nic nie wpisałes';
