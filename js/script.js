@@ -12,61 +12,56 @@ var buttonFahrenheit = document.getElementById('btn-cel-2');
 
 button.addEventListener('click', function(){  
     
-  var temp = window.prompt('wpisz temperature w stopniach celciusza');
+  var temperature = window.prompt('wpisz temperature w stopniach celciusza');
   
-  temp = parseFloat(temp);
+  temperature = parseFloat(temperature);
   
-  var tempFahrenheit = temp * 1.8 + 32;
+  var tempFahrenheit = temperature * 1.8 + 32;
   
-  output.innerHTML = 'temperatura w stopniach celsjusza ' +temp+ ' temperatura w stopniach farenchaita '+ tempFahrenheit;  
+  output.innerHTML = 'temperatura w stopniach celsjusza ' +temperature+ ' temperatura w stopniach farenchaita '+ tempFahrenheit;  
 
-  checkTemperature(temp);
+  checkTemperature(temperature);
 
  
 });
 
 buttonFahrenheit.addEventListener('click', function(){  
     
-  var temp = window.prompt('wpisz temperature w stopniach celciusza');
+  var temperature = window.prompt('wpisz temperature w stopniach fahrenheita');
 
-  temp = parseFloat(temp);
+  temperature = parseFloat(temperature);
   
-  var tempCelsius = (temp - 32) / 1.8;
+  var tempCelsius = (temperature - 32) / 1.8;
   
-  output.innerHTML = 'temperatura w stopniach fahrenheita ' +temp+ ' temperatura w stopniach celsjusza '+ tempCelsius;  
+  output.innerHTML = 'temperatura w stopniach fahrenheita ' +temperature+ ' temperatura w stopniach celsjusza '+ tempCelsius;  
   
-  checkTemperature(tempCelsius);
+  checkTemperature(temperature);
  
 });
 
 
-function checkTemperature (temp) {
+function checkTemperature (temperature) {
 
-  if (isNaN(temp)) {
+  if (isNaN(temperature)) {
     window.prompt('nie podałeś liczby');
   }
-  else if (temp === null) {
+  else if (temperature === null) {
      outputText.innerHTML ='nie podałes liczy';
   }
   
-  else if (18 >= temp && temp > 0 ) {
+  else if (18 >= temperature && temperature > 0 ) {
     outputText.innerHTML ='nie za ciepło';
   }  
   
-  else if (temp < 0) {
+  else if (temperature < 0) {
     outputText.innerHTML = 'brrr zimno';
   }
   
-  else if (temp === 0){
+  else if (temperature === 0){
    outputText.innerHTML = 'chyba woda zamarzła';
-  }
-  
-  else if (18 >= temp && temp > 0 ) {
-    outputText.innerHTML ='nie za ciepło';
-  }
-  
+  } 
 
-  else if ( 30 >= temp && temp > 18) {
+  else if ( 30 >= temperature && temperature > 18) {
     outputText.innerHTML ='mmm przyjemnie ciepło';
   }
   
